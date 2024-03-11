@@ -8,7 +8,7 @@ const pbkdf2Async = promisify(crypto.pbkdf2);
  * @returns dec array of the given hex string
  */
 const stringHexToDec = (string) => {
-    if (string.length % 2 > 0) throw new error("Errore lunghezza stringa hex");
+    if (string.length % 2 > 0) throw new error("Wrong hex string length");
     let ret = [];
     for (const hex of string.match(/.{1,2}/g)) {
         ret.push(parseInt(hex, 16));
